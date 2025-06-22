@@ -1,11 +1,11 @@
-{
-  "name": "line-bot",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
-  }
-}
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('LINE bot is running!');
+});
+
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});
